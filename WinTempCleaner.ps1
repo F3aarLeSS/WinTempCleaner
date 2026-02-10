@@ -166,9 +166,9 @@ $exitBtn.Anchor = 'None'
 $exitBtn.Add_Click({ $form.Close() })
 
 $aboutBtn.Add_Click({
-    $githubUrl = "https://github.com/your-username"   # CHANGE THIS
+    $githubUrl = "https://github.com/F3aarLeSS/WinTempCleaner"   # CHANGE THIS
 
-    $msg = "Windows Temp Cleaner v1.0`n`n" +
+    $msg = "Windows Temp Cleaner v1.1`n`n" +
            "Author: Navajyoti Bayan`n`n" +
            "This tool removes temporary files only.`n" +
            "No telemetry. No persistence.`n`n" +
