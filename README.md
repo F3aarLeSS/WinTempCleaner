@@ -78,7 +78,7 @@ If you are concerned:
 3. Choose items to clean
 4. Click **Start Cleaning**
 
-5. ## Option 2: Run PowerShell Script (Direct from GitHub)
+## Option 2: Run PowerShell Script (Direct from GitHub)
 
 You can run the script directly without downloading files manually.
 
