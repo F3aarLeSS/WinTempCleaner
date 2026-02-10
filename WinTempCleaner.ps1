@@ -166,19 +166,23 @@ $exitBtn.Anchor = 'None'
 $exitBtn.Add_Click({ $form.Close() })
 
 $aboutBtn.Add_Click({
-    [System.Windows.Forms.MessageBox]::Show(
-        "Windows Temp Cleaner v1.0`n`n" +
-        "Author: Navajyoti Bayan`n`n" +
-        "This tool removes temporary files only:`n" +
-        "• User Temp`n" +
-        "• Windows Temp`n" +
-        "• Prefetch (optional)`n" +
-        "• Recycle Bin`n`n" +
-        "No personal files are accessed or modified.",
+    $githubUrl = "https://github.com/your-username"   # CHANGE THIS
+
+    $msg = "Windows Temp Cleaner v1.0`n`n" +
+           "Author: Navajyoti Bayan`n`n" +
+           "This tool removes temporary files only.`n" +
+           "No telemetry. No persistence.`n`n" +
+           "GitHub:`n$githubUrl`n`n" +
+           "Click OK to open GitHub page."
+
+    if ([System.Windows.Forms.MessageBox]::Show(
+        $msg,
         "About",
-        "OK",
+        "OKCancel",
         "Information"
-    )
+    ) -eq "OK") {
+        Start-Process $githubUrl
+    }
 })
 
 # ================================
@@ -186,7 +190,8 @@ $aboutBtn.Add_Click({
 # ================================
 $startBtn.Add_Click({
 
-    if (-not ($cbUserTemp.Checked -or $cbWinTemp.Checked -or $cbPrefetch.Checked -or $cbRecycle.Checked)) {
+    if (-not ($cbUserTemp.Checked -or $cbWinTemp.Checked -or
+              $cbPrefetch.Checked -or $cbRecycle.Checked)) {
         [System.Windows.Forms.MessageBox]::Show(
             "Please select at least one item to clean.",
             "Warning"
