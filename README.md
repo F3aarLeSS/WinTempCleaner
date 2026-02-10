@@ -78,7 +78,11 @@ If you are concerned:
 3. Choose items to clean
 4. Click **Start Cleaning**
 
-### Option 2: Run PowerShell Script
+5. ## Option 2: Run PowerShell Script (Direct from GitHub)
+
+You can run the script directly without downloading files manually.
+
+> This command applies only to the current PowerShell session and does not permanently change system execution policy.
+
 ```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\WinTempCleaner.ps1
+irm https://raw.githubusercontent.com/F3aarLeSS/WinTempCleaner/main/WinTempCleaner.ps1 | iex
